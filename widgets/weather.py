@@ -1,6 +1,7 @@
 from widgets.abstract_widget import AbstractWidget
 from tkinter import Frame, Label, S, TOP
 from utils.weather import WeatherAPI
+import os
 
 
 class Weather(AbstractWidget):
@@ -70,7 +71,9 @@ class Weather(AbstractWidget):
         """ update weather every 6hours """
         self.weather_api_response = self.get_client_api().get_data(force=True)
 
+        refresh_time_ms = os.getenv('WEATHER_REFRESH_TIME_SEC') * 1000
+
         self.temperatureDisplay.config(text=self.get_weather_temperature_text())
         self.weatherDisplay.config(text=self.get_weather_description_text())
-        self.weatherDisplay.after(21600000, self.update_display_weather)
+        self.weatherDisplay.after(refresh_time_ms, self.update_display_weather)
 

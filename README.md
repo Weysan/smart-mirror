@@ -42,6 +42,7 @@ Create a .env file with the following content:
 ```
 API_CITY=Berlin,DE
 API_METRICS_UNIT=metric
+WEATHER_REFRESH_TIME_SEC=3600
 API_APP_ID=xxx
 WEATHER_DISPLAY_CITY=Berlin, Germany
 FIRSTNAME=yyy

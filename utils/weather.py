@@ -10,7 +10,6 @@ class WeatherAPI:
 
     def update(self):
         """ update  the data from weather API """
-        # Todo make it from a preference setting
         city = os.getenv('API_CITY')
         units = os.getenv('API_METRICS_UNIT')
 
